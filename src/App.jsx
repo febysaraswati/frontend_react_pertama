@@ -10,6 +10,8 @@ import Checkout from "./pages/frontpages/Checkout";
 import ProductForm from "./pages/adminpages/ProductForm"; 
 import ProductEdit from "./pages/adminpages/ProductEdit"; 
 import StockLogPage from "./pages/adminpages/StockLogPage"; 
+import BookPage from "./pages/adminpages/BookPage"; 
+import LoanPage from "./pages/adminpages/LoanPage"; 
 
 export default function App() { 
   return ( 
@@ -23,11 +25,15 @@ export default function App() {
 
       {/* Admin Layout wrapper */} 
       <Route path="/admin" element={<AdminLayout />}> 
-            <Route path="dashboard" element={<AdminDashboard />} /> 
-            <Route path="about" element={<AboutPage />} /> 
-            <Route path="add-product" element={<ProductForm />} /> 
-            <Route path="edit-product/:id" element={<ProductEdit />} /> 
-            <Route path="stock-logs" element={<StockLogPage />} /> {/* <-- 2. Daftarkan rute Stock Logs */} 
+        <Route path="dashboard" element={<AdminDashboard />} /> 
+        <Route path="about" element={<AboutPage />} /> 
+        <Route path="add-product" element={<ProductForm />} /> 
+        <Route path="edit-product/:id" element={<ProductEdit />} /> 
+        <Route path="stock-logs" element={<StockLogPage />} /> 
+        
+        {/* Modul Perpustakaan Tetap di /admin/library */}
+        <Route path="library" element={<BookPage />} />         {/* Diakses via /admin/library */}
+        <Route path="library/loans" element={<LoanPage />} />   {/* Diakses via /admin/library/loans */}
       </Route> 
     </Routes> 
   ); 

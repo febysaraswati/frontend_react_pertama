@@ -16,6 +16,11 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <Link to="/admin/info" className="hover:bg-gray-200 p-2 rounded"> 
           Info 
         </Link>
+
+        {/* Menu Perpustakaan baru di bawah Info */}
+        <Link to="/admin/library" className="hover:bg-gray-200 p-2 rounded"> 
+          Perpustakaan 
+        </Link>
       </nav> 
     </div> 
   ); 
